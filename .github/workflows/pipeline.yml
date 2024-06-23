@@ -53,7 +53,7 @@ jobs:
     - name: Execute UI tests
       run: npm run test:ui
     
-    - name: Notify deployment workflow
+    - name: Notify deploy workflow
       if: success()
       run: |
-        echo "{status}={success}"" >> $GITHUB_OUTPUT
+        echo "status=success" >> $GITHUB_OUTPUT
