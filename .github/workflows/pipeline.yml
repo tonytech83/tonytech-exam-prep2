@@ -56,4 +56,4 @@ jobs:
     - name: Notify deployment workflow
       if: success()
       run: |
-        echo "::set-output name=status::success"
+        echo "{status}={success}"" >> $GITHUB_OUTPUT
