@@ -49,7 +49,11 @@ jobs:
 
     - name: Start the application
       run: npm start &
-      
+
     - name: Execute UI tests
       run: npm run test:ui
     
+    - name: Notify deployment workflow
+      if: success()
+      run: |
+        echo "::set-output name=status::success"
